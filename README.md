@@ -25,7 +25,7 @@
   To install necessary dependencies, run the following command:
   
   ```
-  none
+  npm react, npm axios
   ```
   
   ## Usage
