@@ -5,13 +5,16 @@ import Col from "../Col"
 import Search from "../Form/Search"
 import EmployeeDetail from "./EmployeeDetail";
 import API from "../API";
+import Button from "../Form/Button"
+
 
 class Employees extends Component {
     constructor (props){
         super(props)
         this.state = {
             employee: [],
-            query: ""
+            query: "",
+            sort: false
         }
     }
 
@@ -27,20 +30,13 @@ class Employees extends Component {
            query: event.target.value
          })
        }
-    // setSortedFeild = event => {
-    //     event.preventDefault();
-    //     let sortedEmployees = this.state.employee;  
-    //     sortedEmployees.sort((a, b) => {
-    //         if(a.employee.name.first < b.employee.name.first){
-    //             return -1;
-    //         }
-    //         if(a.employee.name.first > b.employee.name.first){
-    //             return 1;
-    //         }
-    //         return 0;
-    //     });
-    // }
- 
+
+    setSortNames = event => {
+        event.preventDefault();
+        this.setState({
+            sort: true
+        })
+    }
  
     render() {
         var matchedEmployees = this.state.employee;
@@ -56,12 +52,25 @@ class Employees extends Component {
                 
                 );
         }
+        if(this.state.sort === true){
+            
+            matchedEmployees.sort((a, b) => {
+                if(a.name.first < b.name.first){
+                    return -1;
+                }
+                if(a.name.first > b.name.first){
+                    return 1;
+                }
+                return 0;
+            })
+        }
 
         return(
             <Container >
                 <Row>
                     <Col size = "md-6">
                     <Search handleInputChange={this.handleInputChange.bind(this)}/>
+                    <Button setSortNames={this.setSortNames.bind(this)} />
                     </Col>
                 </Row>
                 <Row>
