@@ -1,4 +1,5 @@
 {
+  "homepage": "http://bpolo15.github.io/employeedirectory",
   "name": "employeedirectory",
   "version": "0.1.0",
   "private": true,
@@ -12,7 +13,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
   },
-  "homepage": "http://bpolo15.github.io/employeedirectory",
+ 
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
