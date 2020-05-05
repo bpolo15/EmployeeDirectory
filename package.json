@@ -1,6 +1,6 @@
 {
-  "homepage": "http://bpolo15.github.io/employeedirectory",
-  "name": "employeedirectory",
+  "homepage": "http://bpolo15.github.io/EmployeeDirectory",
+  "name": "EmployeeDirectory",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
